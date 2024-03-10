@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:omnisuite_front_end/config/router/app_router.dart';
 import 'package:omnisuite_front_end/config/router/app_router.gr.dart';
 import 'package:omnisuite_front_end/services/locator.dart';
-import 'package:omnisuite_front_end/utils/components/omnisuite_colors.dart';
-import 'package:omnisuite_front_end/utils/components/omnisuite_typography.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -15,32 +13,34 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
-    Future.delayed(const Duration(
-      seconds: 02,
-    ), () {
-      locator<AppRouter>().pushAndPopUntil(const LandingRoute(), predicate: (route) => route.data == null,);
-    },);
+    Future.delayed(
+      const Duration(
+        seconds: 03,
+      ),
+      () {
+        locator<AppRouter>().push(
+          const LandingRoute(),
+          // predicate: (route) => route.data == null,
+        );
+      },
+    );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: OmniSuiteColors.primary,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(
-              color: OmniSuiteColors.white,
-              strokeCap: StrokeCap.round,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/gifs/omni-suite_logo.gif",
             ),
-            SizedBox(height: 20),
-            Text('Loading...', style: OmniSuiteTextStyle.normal,),
-          ],
+            // fit: BoxFit.cover,
+          ),
         ),
       ),
     );

@@ -4,10 +4,11 @@ import 'package:omnisuite_front_end/utils/components/omnisuite_typography.dart';
 import 'package:omnisuite_front_end/utils/components/ui_helpers.dart';
 
 class MessageTileWidget extends StatelessWidget {
-  const MessageTileWidget({super.key,
-  required this.profileImage,
-  required this.prompt,
-  required this.isBot,
+  const MessageTileWidget({
+    super.key,
+    required this.profileImage,
+    required this.prompt,
+    required this.isBot,
   });
 
   final String profileImage;
@@ -20,20 +21,29 @@ class MessageTileWidget extends StatelessWidget {
       width: UIHelpers.screenWidth(context) * 0.36,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if(isBot) ...[
+          if (isBot) ...[
             CircleAvatar(
               radius: 20,
               backgroundImage: AssetImage(profileImage),
             ),
             UIHelpers.horizontalSpaceSmall,
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: OmniSuiteColors.primary.shade1,
-                borderRadius: BorderRadius.circular(20),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: OmniSuiteColors.primary.shade1,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  prompt,
+                  style: OmniSuiteTextStyle.normal.copyWith(
+                    color: OmniSuiteColors.white,
+                    overflow: TextOverflow.clip,
+                  ),
+                ),
               ),
-              child: Text(prompt, style: OmniSuiteTextStyle.normal.copyWith(color: OmniSuiteColors.white),),
             ),
           ] else ...[
             Expanded(
@@ -43,7 +53,13 @@ class MessageTileWidget extends StatelessWidget {
                   color: OmniSuiteColors.primary.shade1,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text(prompt, style: OmniSuiteTextStyle.normal.copyWith(color: OmniSuiteColors.white, overflow: TextOverflow.clip,),),
+                child: Text(
+                  prompt,
+                  style: OmniSuiteTextStyle.normal.copyWith(
+                    color: OmniSuiteColors.white,
+                    overflow: TextOverflow.clip,
+                  ),
+                ),
               ),
             ),
             UIHelpers.horizontalSpaceSmall,

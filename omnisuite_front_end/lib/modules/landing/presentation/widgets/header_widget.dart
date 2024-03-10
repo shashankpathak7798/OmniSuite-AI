@@ -8,21 +8,33 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-      CircleAvatar(
-        radius: 50,
-        backgroundColor: OmniSuiteColors.primary.shade1,
-      ),
-      UIHelpers.horizontalSpaceSmall,
-      Column(
-        children: [
-          Text('OmniSuite AI', style: OmniSuiteTextStyle.headingH1.copyWith(fontStyle: FontStyle.italic,),),
-          Text('Unveiling Future', style: OmniSuiteTextStyle.normal.copyWith(fontStyle: FontStyle.italic,),),
-        ],
-      ),
-    ],);
+        CircleAvatar(
+          radius: 50,
+          backgroundColor: OmniSuiteColors.primary.shade1,
+          backgroundImage:
+              const AssetImage("assets/images/omni-suite_logo.png"),
+        ),
+        UIHelpers.horizontalSpaceSmall,
+        Column(
+          children: [
+            Text(
+              'OmniSuite AI',
+              style: OmniSuiteTextStyle.headingH1.copyWith(
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+            Text(
+              'Unveiling Future',
+              style: OmniSuiteTextStyle.normal.copyWith(
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
