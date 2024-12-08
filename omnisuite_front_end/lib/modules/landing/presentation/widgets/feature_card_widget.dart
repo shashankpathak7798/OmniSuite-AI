@@ -1,10 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:omnisuite_front_end/config/router/app_router.dart';
-import 'package:omnisuite_front_end/config/router/app_router.gr.dart';
 import 'package:omnisuite_front_end/responsive.dart';
-import 'package:omnisuite_front_end/services/locator.dart';
 import 'package:omnisuite_front_end/utils/components/omnisuite_colors.dart';
 import 'package:omnisuite_front_end/utils/components/omnisuite_typography.dart';
 import 'package:omnisuite_front_end/utils/components/ui_helpers.dart';
@@ -15,13 +12,13 @@ class FeatureCardWidget extends StatefulWidget {
     required this.title,
     required this.backgroundGif,
     required this.description,
-    this.isAvailable = true,
+    required this.onTap,
   });
 
   final String title;
   final String backgroundGif;
   final String description;
-  final bool isAvailable;
+  final Function() onTap;
 
   @override
   State<FeatureCardWidget> createState() => _FeatureCardWidgetState();
@@ -112,13 +109,7 @@ class _FeatureCardWidgetState extends State<FeatureCardWidget> {
                       ),
                     ),
                     IconButton(
-                      onPressed: widget.isAvailable
-                          ? () {
-                              locator<AppRouter>().push(
-                                const TextModelRoute(),
-                              );
-                            }
-                          : null,
+                      onPressed: widget.onTap,
                       icon: Icon(
                         Icons.send,
                         color: OmniSuiteColors.hintColor,
