@@ -43,6 +43,12 @@ dependencies:
   logger: ^2.1.0
   http: ^1.2.0
   dart_openai: ^5.1.0
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.2
+  provider: ^6.1.5
+  focusable_control_builder: ^1.1.0
+  rnd: ^0.2.0
+  particle_field: ^1.0.0
 
 dev_dependencies:
   auto_route_generator: 
@@ -72,6 +78,11 @@ flutter:
   assets:
     - assets/gifs/
     - assets/images/
+    - assets/shaders/common/common.glsl
+  
+  shaders:
+    - assets/shaders/ui_glitch.frag
+    - assets/shaders/orb_shader.frag
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
