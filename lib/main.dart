@@ -1,6 +1,8 @@
 import 'package:dart_openai/dart_openai.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:omnisuite_front_end/config/env.dart';
 import 'package:omnisuite_front_end/config/router/app_router.dart';
@@ -12,6 +14,10 @@ void main() {
   OpenAI.apiKey = EnvConfig.OPENAI_API_KEY;
 
   Animate.restartOnHotReload = true;
+
+  if (kIsWeb) {
+    setUrlStrategy(PathUrlStrategy());
+  }
 
   initializeDependencies();
   runApp(FutureProvider<FragmentPrograms?>(
