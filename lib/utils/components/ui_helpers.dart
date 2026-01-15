@@ -16,6 +16,8 @@ class UIHelpers {
   static Widget verticalSpaceLarge = const SizedBox(height: 35.0);
   static Widget verticalSpaceHuge = const SizedBox(height: 300.0);
 
+  static Widget verticalSpace(double space) => SizedBox(height: space,);
+
   // Screen Size Helpers
   static double screenHeight(BuildContext context,) =>
       MediaQuery.of(context).size.height;

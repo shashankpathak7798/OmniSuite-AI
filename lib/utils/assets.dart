@@ -9,10 +9,16 @@ class AssetPaths {
 
 typedef FragmentPrograms = ({FragmentProgram orb, FragmentProgram ui});
 
-Future<FragmentPrograms> loadFragmentPrograms() async => (
-      orb: (await _loadFragmentProgram(AssetPaths.orbShader)),
-      ui: (await _loadFragmentProgram(AssetPaths.uiShader)),
-    );
+FragmentPrograms? fragmentPrograms;
+
+Future<FragmentPrograms> loadFragmentPrograms() async {
+  final fragPrograms = (
+    orb: (await _loadFragmentProgram(AssetPaths.orbShader)),
+    ui: (await _loadFragmentProgram(AssetPaths.uiShader)),
+  );
+  fragmentPrograms = fragPrograms;
+  return fragPrograms;
+}
 
 Future<FragmentProgram> _loadFragmentProgram(String path) async {
   return (await FragmentProgram.fromAsset(path));

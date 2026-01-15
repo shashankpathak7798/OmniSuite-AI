@@ -2,13 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:omnisuite_front_end/utils/api_url_endpoints.dart';
 import 'package:omnisuite_front_end/utils/network/custom_exception.dart';
 import 'package:omnisuite_front_end/utils/network/log.dart';
 
 class ApiProvider {
   Future<dynamic> getData({
     required String subUrl,
-    required String baseUrl,
+    String baseUrl = ApiUrlEndpoints.apiBaseUrl,
     Map<String, dynamic>? body,
   }) async {
     var headers = <String, String>{};
@@ -18,7 +19,7 @@ class ApiProvider {
       dynamic responseJson;
 
       final response = await http.post(
-        Uri.parse("$baseUrl$subUrl"),
+        Uri.parse("$baseUrl/$subUrl"),
         headers: headers,
         body: json.encode(body),
       );

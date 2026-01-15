@@ -72,6 +72,12 @@ class OrbShaderWidgetState extends State<OrbShaderWidget> with SingleTickerProvi
   )..repeat();
 
   @override
+  void dispose() {
+    _heartbeatAnim.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => Consumer<FragmentPrograms?>(
         builder: (context, fragmentPrograms, _) {
           if (fragmentPrograms == null) return const SizedBox.expand();

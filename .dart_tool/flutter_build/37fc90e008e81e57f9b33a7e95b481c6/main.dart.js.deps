@@ -814,7 +814,11 @@ file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/landing/prese
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/pdf_analyzer/presentation/page/pdf_analyzer_page.dart
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/pdf_analyzer/presentation/view/pdf_analyzer_desktop_view.dart
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/pdf_analyzer/presentation/view/pdf_analyzer_mobile_view.dart
-file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash_screen.dart
+file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash/presentation/page/splash_screen.dart
+file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash/presentation/views/splash_desktop_view.dart
+file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash/presentation/views/splash_mobile_view.dart
+file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash/presentation/widgets/orb_widget.dart
+file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/splash/presentation/widgets/splash_header_widget.dart
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/text_model/data/model/request_model.dart
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/text_model/data/repositories/generate_text_repository_impl.dart
 file:///C:/Users/shashank.pathak/Personal/OmniSuite-AI/lib/modules/text_model/domain/entities/message_attributes_model.dart

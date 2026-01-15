@@ -1,0 +1,4 @@
+enum RouteAction {
+  replace,
+  push,
+}

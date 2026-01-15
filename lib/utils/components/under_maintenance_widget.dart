@@ -18,7 +18,10 @@ class UnderMaintenanceWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (headerView != null) ...[headerView!, UIHelpers.verticalSpaceRegular,],
+          if (headerView != null) ...[
+            headerView!,
+            UIHelpers.verticalSpaceRegular,
+          ],
           Container(
             width: 48,
             height: 48,
@@ -63,29 +66,27 @@ class UnderMaintenanceWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 28),
-          Responsive.isDesktop(context)
-              ? SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.tealAccent),
-                      foregroundColor: Colors.tealAccent,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: const Text(
-                      'OK',
-                      style: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 1.6,
-                      ),
-                    ),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                )
-              : const SizedBox.shrink(),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Colors.tealAccent),
+                foregroundColor: Colors.tealAccent,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'OK',
+                style: TextStyle(
+                  fontSize: 16,
+                  letterSpacing: 1.6,
+                ),
+              ),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ),
         ],
       ),
     );

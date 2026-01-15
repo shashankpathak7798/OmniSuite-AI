@@ -6,9 +6,11 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:omnisuite_front_end/config/env.dart';
 import 'package:omnisuite_front_end/config/router/app_router.dart';
-import 'package:omnisuite_front_end/services/locator.dart';
+import 'package:omnisuite_front_end/services/injectible.dart';
 import 'package:omnisuite_front_end/utils/assets.dart';
 import 'package:provider/provider.dart';
+
+final GlobalKey<NavigatorState> globalNavKey = GlobalKey<NavigatorState>();
 
 void main() {
   OpenAI.apiKey = EnvConfig.OPENAI_API_KEY;
@@ -28,8 +30,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-  final appRouter = locator<AppRouter>();
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.dancingScriptTextTheme(),
       ),
-      routerConfig: appRouter.config(),
+      routerConfig: appRouter,
     );
   }
 }
