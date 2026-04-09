@@ -127,15 +127,13 @@ class DashboardDesktopView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         spacing: 16,
         children: [
-          Expanded(
+          const Expanded(
             child: FeatureCardWidget(
               assetPath: "assets/images/text-generation.png",
               title: 'Text Generation',
               description:
               "Create emails, blogs, and ideas instantly",
-              onTap: () {
-                context.go(AppLink.textGeneration);
-              },
+              isComingSoon: true
             ),
           ),
           Expanded(
@@ -143,11 +141,7 @@ class DashboardDesktopView extends StatelessWidget {
               assetPath: "assets/images/pdf-analysis.png",
               title: 'PDF Analyzer',
               description: "Extract and summarize key information",
-              onTap: () {
-                // locator<AppRouter>().push(
-                //   const PDFAnalyzerRoute(),
-                // );
-              },
+              onTap: () => context.go(AppLink.pdfAnalyzer),
             ),
           ),
         ],

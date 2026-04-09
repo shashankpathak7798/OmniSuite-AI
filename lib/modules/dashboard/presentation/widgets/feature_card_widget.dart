@@ -8,15 +8,17 @@ import 'package:omnisuite_front_end/utils/components/ui_helpers.dart';
 class FeatureCardWidget extends StatefulWidget {
   final String title;
   final String description;
-  final VoidCallback onTap;
+  final void Function()? onTap;
   final String assetPath;
+  final bool? isComingSoon;
 
   const FeatureCardWidget({
     super.key,
     required this.title,
     required this.description,
-    required this.onTap,
+    this.onTap,
     required this.assetPath,
+    this.isComingSoon,
   });
 
   @override
@@ -74,6 +76,7 @@ class _FeatureCardWidgetState extends State<FeatureCardWidget> {
           ),
           UIHelpers.verticalSpaceMedium,
           GetStartedButton(
+            isComingSoon: widget.isComingSoon,
             onTap: widget.onTap,
           ),
         ],

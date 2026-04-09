@@ -84,5 +84,21 @@ final GoRouter appRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: AppLink.pdfAnalyzer,
+      name: 'PDF Analyzer',
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return CustomTransitionPage(
+          child: AppLink.getScreen(state.path),
+          transitionDuration: const Duration(seconds: 1),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        );
+      },
+    ),
   ],
 );

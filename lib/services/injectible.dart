@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:omnisuite_front_end/modules/dashboard/presentation/bloc/dashboard_bloc.dart';
+import 'package:omnisuite_front_end/modules/pdf_analyzer/presentation/bloc/pdf_analyzer_bloc.dart';
 import 'package:omnisuite_front_end/modules/sign_in/data/repositories/sign_in_repository_impl.dart';
 import 'package:omnisuite_front_end/modules/sign_in/domain/repositories/sign_in_repository.dart';
 import 'package:omnisuite_front_end/modules/sign_in/domain/usecases/sign_in_use_case.dart';
@@ -37,4 +38,7 @@ void initializeDependencies() {
 
   /// [DASHBOARD]
   serviceLocator.registerFactory<DashboardBloc>(() => DashboardBloc());
+
+  /// [PDF ANALYZER]
+  serviceLocator.registerFactory<PdfAnalyzerBloc>(() => PdfAnalyzerBloc());
 }
